@@ -1,0 +1,366 @@
+/* General styles */
+html {
+  line-height: 1.15;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Josefin Sans", serif;
+  background: #FFDFDC;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #FCDDF2;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+
+nav ul li a:hover {
+  background-color: #ED6A5A;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul li a img.logo {
+  height: 90px; /* Set the height of the logo */
+  width: auto;  /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+nav ul li a img.logo:hover {
+  transform: scale(1.3); /* Slightly enlarge the logo on hover */
+}
+
+/* Slideshow Section Below Hero */
+#slider-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  max-width: 100%;
+  height: 200px; /* Adjust height as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Slideshow content (all slides) */
+.slides {
+  display: flex;
+  width: 300%; /* Number of slides multiplied by 100% (3 slides = 300%) */
+  animation: slideRight 20s infinite linear;
+}
+
+/* Slide styling */
+.slide {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0; /* Prevent slides from shrinking */
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+}
+
+/* Image styling */
+.slide img {
+  width: 99.5%;
+  height: 99.5%;
+  object-fit: cover; /* Ensures images fill the space */
+  object-position: center; /* Optionally center the image if it's cropped */
+}
+
+/* Keyframes for the sliding animation (Moving Right) */
+@keyframes slideRight {
+  0% {
+    transform: translateX(0); /* Start at the first slide */
+  }
+  33% {
+    transform: translateX(-100%); /* Slide to the second image */
+  }
+  66% {
+    transform: translateX(-200%); /* Slide to the third image */
+  }
+  100% {
+    transform: translateX(0); /* Reset back to the first image */
+  }
+}
+
+/* Section Styling */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#home {
+  background: url('https://assets.onecompiler.app/42ysuwktd/42yeau4je/home%20image.jpg') no-repeat center center/cover;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#home h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#home p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+#home button {
+  padding: 12px 30px;
+  background-color: #FCDDF2;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#home button:hover {
+  background-color: #ED6A5A;
+  color: white;
+  font-weight: bold;
+}
+
+/* Different nav option Styling */
+.section-heading {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.section-content {
+  font-size: 1.2em;
+}
+
+/* Gallery Section Styles */
+#gallery {
+  padding: 150px;
+  text-align: center;
+}
+
+.section-content {
+  padding: 5px;
+}
+
+/* Gallery Container using Grid */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* You can change this to 2 or 4 for different layouts */
+  gap: 10px; /* Reduce gap to fit larger images, or increase it for more space */
+  margin-top: 20px;
+}
+
+/* Styling for Gallery Items */
+.gallery-item {
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative; 
+  transition: transform 0.3s ease; 
+}
+
+/* Hover effect on the gallery item */
+.gallery-item.hovered {
+  transform: scale(1.5); 
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Image inside gallery item */
+.gallery-item img {
+  width: 100%;
+  height: auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease; 
+  object-fit: cover; /* Ensure the image fills the space without distorting */
+  object-position: center; /* Center the image if it gets cropped */
+}
+
+/* Hover zoom effect on the image */
+.gallery-item:hover img {
+  transform: scale(1.5) rotate(360deg); /* Increase scale for larger images */
+  transition: transform 0.6s ease-in-out; 
+}
+
+/* Optional: Gallery item text styling */
+.gallery-item p {
+  font-size: 1rem;
+  margin-top: 8px;
+  color: #333;
+}
+
+/* Optional: Overlay effect on hover */
+.gallery-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out; 
+}
+
+/* Show the overlay when hovered */
+.gallery-item:hover .overlay {
+  opacity: 1; 
+}
+
+/* Optional text inside the overlay */
+.overlay p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* title padding*/
+#about {
+  padding: 150px;
+  text-align: center;
+}
+
+#workshop {
+  padding: 150px;
+  text-align: center;
+}
+
+#faqs {
+  padding: 150px;
+  text-align: center;
+}
+
+#contact {
+  padding: 150px;
+  text-align: center;
+}
+
+/* Form Styling (contact me) */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 10px 15px;
+  background-color: #FCDDF2;
+  color: black;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #ED6A5A;
+  color: white;
+  font-weight: bold;
+}
+
+/*extra space home page*/
+#extra-space button {
+  padding: 10px 20px;
+  background-color: #FCDDF2;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-family: "Josefin Sans", serif;
+}
+
+#extra-space button:hover {
+  background-color: #ED6A5A;
+  color: white;
+  font-weight: bold;
+  font-family: "Josefin Sans", serif;
+}
+
+/* Extra Image Before Footer  (workshop)*/
+#extra-image {
+  margin: 40px 0; 
+  text-align: center; 
+}
+
+#extra-image img {
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* For smaller screens limit the image width */
+@media (max-width: 768px) {
+  #extra-image img {
+    max-width: 100%; 
+  }
+}
+
+/* Simple Scroll Animation */
+.fadeIn {
+  animation: fadeIn 4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+footer {
+  background: linear-gradient(to top, #212738 75%, transparent);
+  color: white;
+  padding: 50px 10px 3px 10px;
+}
